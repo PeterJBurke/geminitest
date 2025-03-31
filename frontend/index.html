@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MAVLink Ground Control Interface</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-column">
+            <canvas id="pfdCanvas" width="600" height="400"></canvas>
+            <div id="statusBox">
+                <h2>Status</h2>
+                <p>Connection Status: <span id="connectionStatus">Disconnected</span> ❤️</p>
+                <p>EKF Status: <span id="ekfStatus">No Data</span></p>
+                <div id="messageLog"></div>
+            </div>
+            <div id="controls">
+                <h2>Controls</h2>
+                <button id="armButton">Arm</button>
+                <button id="disarmButton">Disarm</button>
+                <button id="takeoffButton">Takeoff</button>
+                <button id="landButton">Land</button>
+                <button id="rtlButton">RTL</button>
+                <select id="modeSelect">
+                    <option value="MANUAL">Manual</option>
+                    <option value="GUIDED">Guided</option>
+                    <option value="AUTO">Auto</option>
+                    <option value="LOITER">Loiter</option>
+                </select>
+                <div id="goTo">
+                    <input type="number" id="latInput" placeholder="Latitude">
+                    <input type="number" id="lonInput" placeholder="Longitude">
+                    <button id="goToButton">Go To</button>
+                    <button id="clearGoToButton">Clear</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <div id="map" style="width: 600px; height: 400px;"></div>
+            <button id="centerMapButton">Center Map</button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

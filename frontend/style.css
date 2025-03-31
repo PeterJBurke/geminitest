@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-column {
+    width: 40%;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.right-column {
+    width: 60%;
+    padding: 20px;
+    background-color: #eee;
+}
+
+#pfdCanvas {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+#statusBox {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#controls {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#map {
+    margin-bottom: 20px;
+}
