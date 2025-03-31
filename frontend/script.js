@@ -53,3 +53,39 @@ function drawPFD() {
 }
 
 drawPFD();
+
+// Controls
+document.getElementById('armButton').addEventListener('click', function() {
+    socket.emit('command', {command: 'arm'});
+});
+
+document.getElementById('disarmButton').addEventListener('click', function() {
+    socket.emit('command', {command: 'disarm'});
+});
+
+document.getElementById('takeoffButton').addEventListener('click', function() {
+    socket.emit('command', {command: 'takeoff'});
+});
+
+document.getElementById('landButton').addEventListener('click', function() {
+    socket.emit('command', {command: 'land'});
+});
+
+document.getElementById('rtlButton').addEventListener('click', function() {
+    socket.emit('command', {command: 'rtl'});
+});
+
+document.getElementById('modeSelect').addEventListener('change', function() {
+    socket.emit('command', {command: 'set_mode', mode: this.value});
+});
+
+document.getElementById('goToButton').addEventListener('click', function() {
+    var lat = document.getElementById('latInput').value;
+    var lon = document.getElementById('lonInput').value;
+    socket.emit('command', {command: 'go_to', lat: lat, lon: lon});
+});
+
+document.getElementById('clearGoToButton').addEventListener('click', function() {
+    document.getElementById('latInput').value = '';
+    document.getElementById('lonInput').value = '';
+});
